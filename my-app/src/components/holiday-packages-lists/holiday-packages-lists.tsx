@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { holidayPackagesLists } from "../../data/holiday-packages-lists-data";
 import { HolidayPackagesListItem } from "../holiday-packages-list-item";
-import { sortHolidayPackages } from "../../helpers/sort-holiday-packages";
+import { sortHolidayPackages } from "../helpers/sort-holiday-packages";
 import { Container } from "./holiday-packages-lists.styled-components";
 import { SortingButtons } from "../sorting-buttons";
 import { PRICE } from "../constants/sorting-types";

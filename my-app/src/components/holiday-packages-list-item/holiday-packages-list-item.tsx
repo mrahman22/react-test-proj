@@ -14,9 +14,9 @@ import {
   Button,
   HotelOverview,
 } from "./holiday-packages-list-item.styled-components";
-import { getResortImage } from "../../helpers/get-resort-image";
+import { getResortImage } from "../helpers/get-resort-image";
 import { HolidayPackagesListItemProps } from "./holiday-packages-list-item.intefaces";
-import { formatAmount } from "../../helpers/format-amount";
+import { formatAmount } from "../helpers/format-amount";
 
 export const HolidayPackagesListItem: React.FC<
   HolidayPackagesListItemProps

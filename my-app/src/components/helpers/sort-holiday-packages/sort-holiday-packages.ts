@@ -1,4 +1,4 @@
-import { HolidayPackage } from "../../holiday-packages-lists/holiday-packages-lists-interfaces";
+import { HolidayPackage } from "../../holiday-packages-lists/holiday-packages-lists.interfaces";
 import {
   ALPHABETICALLY,
   PRICE,
