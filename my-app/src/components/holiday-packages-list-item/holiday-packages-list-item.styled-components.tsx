@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: white;
+  background-color: #fff;
   margin-top: 20px;
-  width: 600px;
+  width: 650px;
   height: 190px;
   display: flex;
   position: relative;
@@ -20,7 +20,7 @@ export const HotelInfo = styled.div`
   h1 {
     margin-bottom: 2px;
     font-size: 14px;
-    color: darkblue;
+    color: #002582;
     font-family: Arial, sans-serif;
   }
 `;
@@ -29,7 +29,7 @@ export const Text = styled.p`
   margin: 4px 0px;
   font-size: 10px;
   font-family: Arial, sans-serif;
-  color: lightgray;
+  color: #77767a;
 
   span {
     color: black;
@@ -46,26 +46,22 @@ export const Button = styled.button`
   padding: 4px 12px;
   font-size: 12px;
   font-family: Arial, sans-serif;
-  color: darkblue;
+  color: #002582;
 `;
 
 export const HotelOverview = styled.div`
-  width: 600px;
   padding: 10px;
+  width: 650px;
   background-color: white;
   font-size: 12px;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
-  color: darkblue;
+  color: #002582;
 
   h3 {
     font-size: 12px;
-    color: darkblue;
+    color: #002582;
     font-family: Arial, sans-serif;
-  }
-
-  p {
-    color: black;
   }
 `;
 
@@ -77,7 +73,7 @@ export const BookNowButton = styled.button`
   padding: 12px;
   border-radius: 5px;
   font-family: Arial, sans-serif;
-  color: darkblue;
+  color: #002582;
   font-weight: bold;
   width: 170px;
   height: 25px;
