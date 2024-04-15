@@ -35,7 +35,7 @@ export const holidayPackagesLists: HolidayPackage[] = [
     extraInfo: {
       numberOfGuest: {
         adults: 2,
-        children: 2,
+        children: 1,
         infants: 0,
       },
       dateInfo: {

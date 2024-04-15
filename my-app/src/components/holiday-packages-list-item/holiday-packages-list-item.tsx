@@ -20,51 +20,54 @@ import { formatAmount } from "../helpers/format-amount";
 
 export const HolidayPackagesListItem: React.FC<
   HolidayPackagesListItemProps
-> = ({ holidayPackage }) => {
+> = ({
+  holidayPackage: {
+    id,
+    hotelName,
+    resortName,
+    location,
+    rating,
+    extraInfo: {
+      numberOfGuest: { adults, children, infants },
+      dateInfo: { date, numOfDays },
+      departingFrom,
+    },
+    priceInPounds,
+    hotelOverview,
+  },
+}) => {
   const [showHotelOverview, setShowHotelOverview] = useState(false);
 
-  const resortImgSrc = getResortImage({
-    hotelName: holidayPackage.hotelName,
-  });
+  const resortImgSrc = getResortImage({ hotelName });
 
   return (
     <>
-      <Container key={holidayPackage.id}>
+      <Container key={id}>
         <Image src={resortImgSrc} alt="holiday package" />
         <HotelInfo>
           <div>
-            <h1>{holidayPackage.hotelName}</h1>
+            <h1>{hotelName}</h1>
             <Text>
-              {holidayPackage.resortName}, {holidayPackage.location}
+              {resortName}, {location}
             </Text>
-            <StarRating rating={holidayPackage.rating} />
+            <StarRating rating={rating} />
             <Text>
-              <span>{holidayPackage.extraInfo.numberOfGuest.adults}</span>{" "}
-              adults,{" "}
-              <span>{holidayPackage.extraInfo.numberOfGuest.children}</span>{" "}
-              children{" "}
-              {holidayPackage.extraInfo.numberOfGuest.infants > 0 && (
+              <span>{adults}</span> adults, <span>{children}</span>{" "}
+              {children > 1 ? "children" : "child"}{" "}
+              {infants > 0 && (
                 <>
-                  <span>
-                    & {holidayPackage.extraInfo.numberOfGuest.infants}
-                  </span>{" "}
-                  infant
+                  <span>{infants}</span> infant
                 </>
               )}
             </Text>
             <Text>
-              <span>{holidayPackage.extraInfo.dateInfo.date}</span> for{" "}
-              <span> {holidayPackage.extraInfo.dateInfo.numOfDays} days</span>
+              <span>{date}</span> for <span>{numOfDays} days</span>
             </Text>
             <Text>
-              departing from{" "}
-              <span>{holidayPackage.extraInfo.departingFrom}</span>
+              departing from <span>{departingFrom}</span>
             </Text>
             <BookNowButton>
-              Book now{" "}
-              <span>
-                {formatAmount({ amount: holidayPackage.priceInPounds })}
-              </span>
+              Book now <span>{formatAmount({ amount: priceInPounds })}</span>
             </BookNowButton>
           </div>
         </HotelInfo>
@@ -83,7 +86,7 @@ export const HolidayPackagesListItem: React.FC<
       {showHotelOverview && (
         <HotelOverview>
           <h3>Overview</h3>
-          <Text>{holidayPackage.hotelOverview}</Text>
+          <Text>{hotelOverview}</Text>
         </HotelOverview>
       )}
     </>

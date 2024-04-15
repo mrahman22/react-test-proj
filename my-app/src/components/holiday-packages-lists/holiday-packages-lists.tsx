@@ -9,6 +9,10 @@ import { PRICE } from "../constants/sorting-types";
 export const HolidayPackagesLists: React.FC = () => {
   const [sortedBy, setSortedBy] = useState<string>(PRICE);
 
+  if (!holidayPackagesLists || holidayPackagesLists.length === 0) {
+    return null;
+  }
+
   const sortBy = (field: string) => {
     setSortedBy(field);
   };
